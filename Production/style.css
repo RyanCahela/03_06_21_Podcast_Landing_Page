@@ -46,6 +46,7 @@ html {
   width: 100vw;
   box-sizing: border-box;
   font-weight: var(--light-font-weight);
+  background-color: var(--blackish);
 }
 
 h1,
@@ -255,6 +256,7 @@ DESKTOP width = 1440px
     background-size: var(--desktop-host-image-width), var(--green-dots-width);
     background-position: right top 122px, right bottom 78px;
     padding-left: 168px;
+    max-width: 1275px;
     margin: 0 auto;
   }
 }
