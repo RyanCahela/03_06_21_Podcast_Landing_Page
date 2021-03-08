@@ -1,6 +1,7 @@
 :root {
   /*Colors*/
   --highlight-color: hsl(157, 74%, 63%);
+  --highlight-color-hover: hsl(157, 100%, 85%);
   --primary-dark-color: hsl(225, 26%, 23%);
   --primary-color: hsl(225, 21%, 45%);
   --primary-light-color: hsl(225, 40%, 83%);
@@ -32,8 +33,8 @@
 
   /*layout sizes*/
   --green-dots-width: 232px;
-  --tablet-host-image-width: 488px;
-  --desktop-host-image-width: 888px;
+  --tablet-host-image-width: 518px;
+  --desktop-host-image-width: 950px;
 }
 
 * {
@@ -115,9 +116,6 @@ h6 {
   margin-bottom: var(--s2);
 }
 
-.available-on-platform-list li {
-}
-
 .available-on-platform-list img {
   width: 100%;
 }
@@ -146,11 +144,25 @@ h6 {
   background-color: var(--primary-dark-color);
   color: var(--primary-light-color);
   size: 5ch;
+  order: 1;
 }
 
 .request-access-form > button {
   background-color: var(--highlight-color);
   color: var(--blackish);
+  transition: background-color 0.3s ease-in-out;
+  order: 3;
+}
+
+.request-access-form > button:hover {
+  background-color: var(--highlight-color-hover);
+  cursor: pointer;
+}
+
+.request-access-form .error-message {
+  order: 2;
+  align-self: flex-start;
+  margin-inline-start: var(--s2);
 }
 
 /***************************
@@ -176,6 +188,12 @@ Helpers
   overflow: visible;
   position: static;
   width: auto;
+}
+
+.error-message {
+  color: red;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /**********************
@@ -210,6 +228,7 @@ TABLET width = 768px
     max-width: 723px;
     line-height: calc(var(--s1) * 1.25);
     padding-top: var(--s4);
+    padding-right: var(--s2);
   }
 
   .main > * + * {
@@ -223,6 +242,7 @@ TABLET width = 768px
   }
 
   .main .available-on-platform-list {
+    margin-top: var(--s4);
     order: 5;
   }
 
@@ -235,11 +255,27 @@ TABLET width = 768px
     border: 5px solid var(--primary-dark-color);
     border-radius: var(--s2);
     flex-direction: row;
+    flex-wrap: wrap;
+    max-width: 75%;
+    position: relative;
+  }
+
+  .main .request-access-form > input {
+    flex: 1 0;
   }
 
   .main .request-access-form > button {
     padding-left: var(--s-2);
     padding-right: var(--s-2);
+    order: 2;
+    flex: 1 0;
+  }
+
+  .main .request-access-form .error-message {
+    order: 3;
+    flex-basis: 100%;
+    position: absolute;
+    bottom: -40px;
   }
 }
 
@@ -256,7 +292,7 @@ DESKTOP width = 1440px
     background-size: var(--desktop-host-image-width), var(--green-dots-width);
     background-position: right top 122px, right bottom 78px;
     padding-left: 168px;
-    max-width: 1275px;
+    max-width: 1440px;
     margin: 0 auto;
   }
 }
