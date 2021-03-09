@@ -189,7 +189,7 @@ Helpers
 TABLET width = 768px
 **********************/
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 480px) {
   .container {
     align-items: flex-start;
     background-image: url("./assets/tablet/image-host.jpg"), url("./assets/desktop/bg-pattern-dots.svg");
@@ -261,14 +261,16 @@ TABLET width = 768px
 DESKTOP width = 1440px
 *****************************/
 
-@media only screen and (min-width: 1275px) {
+@media only screen and (min-width: 960px) {
   .container {
     background-image: url("./assets/desktop/image-host.jpg"), url("./assets/desktop/bg-pattern-dots.svg");
     background-repeat: no-repeat;
     background-size: var(--desktop-host-image-width), var(--green-dots-width);
     background-position: right top 122px, right bottom 78px;
-    padding-left: 168px;
     max-width: 1275px;
     margin: 0 auto;
+  }
+  .main {
+    padding-left: 168px;
   }
 }
