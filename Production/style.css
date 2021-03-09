@@ -23,14 +23,12 @@
   --s5: calc(var(--s4) * var(--ratio));
   --container-padding: var(--s1);
   --container-padding-tablet: var(--s2);
-
   /*Typography*/
   --heading-font-size: var(--s1);
   --tablet-heading-font-size: var(--s3);
   --body-font-size: 18px;
   --bold-font-weight: 700;
   --light-font-weight: 300;
-
   /*layout sizes*/
   --green-dots-width: 232px;
   --tablet-host-image-width: 518px;
@@ -50,12 +48,7 @@ html {
   background-color: var(--blackish);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-size: var(--heading-font-size);
   font-weight: var(--normal-font-weight);
   margin-top: 0;
@@ -63,11 +56,7 @@ h6 {
 }
 
 .container {
-  background-image: linear-gradient(
-      var(--blackish-with-opacity),
-      var(--blackish-with-opacity)
-    ),
-    url("./assets/mobile/image-host.jpg");
+  background-image: linear-gradient( var(--blackish-with-opacity), var(--blackish-with-opacity)), url("./assets/mobile/image-host.jpg");
   background-size: cover;
   display: flex;
   min-height: 100vh;
@@ -127,8 +116,7 @@ h6 {
   margin-bottom: var(--s3);
 }
 
-.request-access-form > input,
-.request-access-form > button {
+.request-access-form>input, .request-access-form>button {
   border-radius: var(--s2);
   font-weight: bold;
   width: 100%;
@@ -140,21 +128,21 @@ h6 {
   border: none;
 }
 
-.request-access-form > input {
+.request-access-form>input {
   background-color: var(--primary-dark-color);
   color: var(--primary-light-color);
   size: 5ch;
   order: 1;
 }
 
-.request-access-form > button {
+.request-access-form>button {
   background-color: var(--highlight-color);
   color: var(--blackish);
   transition: background-color 0.3s ease-in-out;
   order: 3;
 }
 
-.request-access-form > button:hover {
+.request-access-form>button:hover {
   background-color: var(--highlight-color-hover);
   cursor: pointer;
 }
@@ -168,9 +156,11 @@ h6 {
 /***************************
 Helpers
 ****************************/
+
 .hide-element {
   border: 0;
-  clip: rect(1px 1px 1px 1px); /*IE6 & IE7*/
+  clip: rect(1px 1px 1px 1px);
+  /*IE6 & IE7*/
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
   margin: -1px;
@@ -180,8 +170,7 @@ Helpers
   width: 1px;
 }
 
-.hide-element-focusable:active,
-.hide-element-focusable:focus {
+.hide-element-focusable:active, .hide-element-focusable:focus {
   clip: auto;
   height: auto;
   margin: 0;
@@ -203,8 +192,7 @@ TABLET width = 768px
 @media only screen and (min-width: 768px) {
   .container {
     align-items: flex-start;
-    background-image: url("./assets/tablet/image-host.jpg"),
-      url("./assets/desktop/bg-pattern-dots.svg");
+    background-image: url("./assets/tablet/image-host.jpg"), url("./assets/desktop/bg-pattern-dots.svg");
     background-size: var(--tablet-host-image-width), var(--green-dots-width);
     background-repeat: no-repeat;
     background-position: right top, left var(--container-padding-tablet) bottom;
@@ -214,11 +202,9 @@ TABLET width = 768px
     padding-right: var(--container-padding-tablet);
     transition: background-position 1s ease-in-out;
   }
-
   .header {
     margin-bottom: var(--s4);
   }
-
   .main {
     background-color: var(--blackish);
     text-align: left;
@@ -230,26 +216,21 @@ TABLET width = 768px
     padding-top: var(--s4);
     padding-right: var(--s2);
   }
-
-  .main > * + * {
+  .main>*+* {
     margin-top: var(--s2);
     margin-bottom: 0;
   }
-
   .main .main-heading {
     font-size: var(--tablet-heading-font-size);
     line-height: calc(var(--s3) * 1.25);
   }
-
   .main .available-on-platform-list {
     margin-top: var(--s4);
     order: 5;
   }
-
   .main .request-access-form {
     order: 4;
   }
-
   .main .request-access-form {
     background-color: var(--primary-dark-color);
     border: 5px solid var(--primary-dark-color);
@@ -259,18 +240,15 @@ TABLET width = 768px
     max-width: 75%;
     position: relative;
   }
-
-  .main .request-access-form > input {
+  .main .request-access-form>input {
     flex: 1 0;
   }
-
-  .main .request-access-form > button {
+  .main .request-access-form>button {
     padding-left: var(--s-2);
     padding-right: var(--s-2);
     order: 2;
     flex: 1 0;
   }
-
   .main .request-access-form .error-message {
     order: 3;
     flex-basis: 100%;
@@ -285,9 +263,7 @@ DESKTOP width = 1440px
 
 @media only screen and (min-width: 1440px) {
   .container {
-    background-image: url("./assets/desktop/image-host.jpg"),
-      url("./assets/desktop/bg-pattern-dots.svg");
-
+    background-image: url("./assets/desktop/image-host.jpg"), url("./assets/desktop/bg-pattern-dots.svg");
     background-repeat: no-repeat;
     background-size: var(--desktop-host-image-width), var(--green-dots-width);
     background-position: right top 122px, right bottom 78px;
